@@ -7,7 +7,7 @@ const program = document.getElementById("program_studi");
 
 jenis.addEventListener("change", function() {
   const jenis_now = this.value;
-  program.innerHTML = '<option value="default">--Pilih program studi--</option>';
+  program.innerHTML = '<option value="-">--Pilih program studi--</option>';
 
   if (jenis_now && dataProgramStudi[jenis_now]) {
     program.disabled = false;
@@ -130,7 +130,20 @@ function validateForm(event) {
 
     if (isValid) {
         alert("Form submitted successfully!");
-        document.getElementById("daftar").reset();
+        const nama = document.getElementById("nama").value;
+        const nim = document.getElementById("nim").value;
+        const jenis = document.getElementById("jenis_anggota").value;
+        const program = document.getElementById("program_studi").value;
+        const telepon = document.getElementById("telepon").value;
+        const email = document.getElementById("email").value;
+        const alamat = document.getElementById("alamat").value;
+
+        const DataBaru = {nama, nim, jenis, program, telepon, email, alamat};
+
+        let dataAnggota = JSON.parse(localStorage.getItem("dataPendaftar")) || [];
+
+        dataAnggota.push(DataBaru);
+        localStorage.setItem("dataPendaftar", JSON.stringify(dataAnggota));
 
         const allInput = [namaInput, nimInput, jenisInput, programInput, emailInput, teleponInput, alamatInput];
 
@@ -139,6 +152,8 @@ function validateForm(event) {
         })
 
         document.getElementById("program_studi").disabled = true;
+
+        document.getElementById("daftar").reset();
 
         return true;
     }

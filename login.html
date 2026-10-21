@@ -16,8 +16,8 @@
                 </div>
                 <nav class="d-flex align-items-center gap-3 my-2 my-lg-0">
                     <a href="index.html" class="btn btn-light me-2">Beranda</a>
-                    <a href="#" class="btn btn-light me-2">Tentang</a>
-                    <a href="#" class="btn btn-light me-2">Layanan</a>
+                    <a href="tentang.html" class="btn btn-light me-2">Tentang</a>
+                    <a href="layanan.html" class="btn btn-light me-2">Layanan</a>
                     <a href="daftar.html" class="btn btn-light me-2">Pendaftaran</a>
                     <a href="tabel.html" class="btn btn-light me-2">Data Anggota</a>
                 </nav>
@@ -29,7 +29,10 @@
 
         <div class="card-login">
             <form id="daftar" class="d-flex flex-column justify-content-center align-items-center" style="gap: 20px;" onsubmit="return validateForm(event)">
-                <h3>Login Petugas</h3>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h3>Login Petugas</h3>
+                    <p style="font-weight: bold; font-size: x-small; color: red;">(Email = petugas@gmail.com | Password = passwordPetugas123)</p>
+                </div>
                 <div style="width: 100%;">
                     <label>Email Petugas</label>
                     <input type="text" id="email" class="form-control" placeholder="Masukkan email">
