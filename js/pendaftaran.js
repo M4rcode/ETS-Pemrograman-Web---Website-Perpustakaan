@@ -1,5 +1,5 @@
 const dataProgramStudi = {
-    Mahasiswa: ["Teknik Informatika", "Teknik Biomedik", "Teknik Elektro", "Teknologi Informasi", "Teknik Komputer"]
+    Mahasiswa: ["Teknik Informatika", "Teknik Biomedik", "Teknik Elektro", "Teknologi Informasi", "Teknik Komputer", "Sistem Informasi"]
 }
 
 const jenis = document.getElementById("jenis_anggota");
@@ -13,7 +13,7 @@ jenis.addEventListener("change", function() {
     program.disabled = false;
     dataProgramStudi[jenis_now].forEach(function (item) {
       const option = document.createElement("option");
-      option.value = item.toLowerCase();
+      option.value = item;
       option.textContent = item;
       program.appendChild(option);
     });
